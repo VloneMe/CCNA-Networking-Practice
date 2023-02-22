@@ -1,0 +1,9 @@
+10.10.10.0/27
+
+
+Network id:   0  16 32 48 64 80 96 ...
+Broadcast id: 15 31 39 63 79 95 ...
+
+Subnet Mask: 255.255.255.240
+
+Usable Ip per Block: 14 ip addresses
