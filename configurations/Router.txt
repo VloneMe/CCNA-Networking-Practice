@@ -9,9 +9,9 @@ Basic Cisco Router Configuration;
 
 #$ hostname // change the name of the host ( Router1 )
 
-#$ enable password 123 // user password but weeak
+#$ enable password [123] // user password but weeak
 #$ no enable password // Removes the enabled password
-#$ enable secret cisco // most recommend and strong passwd to use
+#$ enable secret [cisco] // most recommend and strong passwd to use
 #$ no enable secret // Removes the enabled secret key
 
 #$ reload or do reload // boot the devices
@@ -24,7 +24,7 @@ Basic Cisco Router Configuration;
 // Router IP address Configuration
 
 # config t // Go to global configurations
-#$ interface fa0/0 // choose the interface to assign ip address
+#$ interface [fa0/0] OR int [fa0/0]  // choose the interface to assign ip address
 #$ no shutdown // use to enable the interface
 #$ ip address 192.168.1.1 255,255.255.0
 #$ do show ip interface brief // show ip configurations
