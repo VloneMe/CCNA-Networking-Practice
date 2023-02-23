@@ -1,0 +1,58 @@
+// VLAN & Trunking configurations
+
+> enable // enable all user previllages
+
+# config t // enable global configuration terminal
+
+#$ vlan [10] // write new vlan on switch
+#$ name Accounting // provide name for the vlan created
+#$ do show vlan brief // dispals all vlans information.
+
+// Change interface to the vlan required.
+
+#$ int [fa0/0] // enable the interface.
+#$ int range [fa0/1-n] // enable many interface at once.
+#$ switchport mode access // get interface mode access.
+#$ switchport access vlan 10 // change interface to vlan specified.
+#$ exit  // escape key.
+
+// On a pc device use the following
+// arp (command for wondows)
+// The address resolution protocol, or ARP, connects an always-changing IP 
+// address to a fixed media access (MAC) address. 
+
+// Important Protocols
+>>> arp > Address Resolution Protocol
+>>> icmp > Internet Control Message Protocol
+
+#> arp -a // show mac address informaton
+#> arp -d // delete mac address infromation if exist
+
+// On a Switch Devices check mac addresstable
+
+#$ do show mac-address-table // lists all mac address available 
+#$ do clear mac-address-table // clear all mac address used with switch device
+
+
+// Trunking the network
+// Trunking Protocols are [ISL & 802.dot1q]
+// ISL >>> Inter Switch Link
+// 802.dot1q >> encapsulation protocol
+
+#$ int [fa0/5] // the port in the switch to be used as Trunk
+#$ switchport mode trunk // Give port mode access trunk
+#$ exit 
+#$ do show interface trunk // display the interface trunk
+
+// OR for switch made by other vendors or top layer 3 switch
+#$ int [fa0/7]
+#$ switchport trunk encapsulation dot1q
+#$ switchport mode trunk
+#$ exit
+#$ do show interface trunk
+
+// Trunk allowed only
+
+#$ int [fa0/5] // Access interface
+#$ switchport trunk allowed vlan [10, 20, 30] // allowed vlan on trunk mode
+#$ do show interface trunk
