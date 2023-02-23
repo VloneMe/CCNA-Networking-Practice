@@ -1,0 +1,15 @@
+// Vlans Connections Communication
+
+// Inter Vlans using Router
+
+#$ int [fa0/0]  // use the port connected to the switch
+#$ no shutdown // if the interface is down
+#$ ip address [(emter IP) - (enter subnet ip)] // assign ip address
+#$ exit // end of ip configurations of vlan 1
+
+// For sub interfaces configurations below
+
+#$ int [fa0/0.10] / choose the sub interface to configure
+#$ encapsulation dot1q 10 // confirms the sub-interface for the vlan
+ip address [(emter IP) - (enter subnet ip)] // assign ip address
+#$ exit // end of the configuration
