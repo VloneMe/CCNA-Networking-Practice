@@ -22,3 +22,13 @@
 #$ ip routing // This enables the Layer 3 switch functioning.
 
 
+// DHCP layer 3 Switch configurations
+
+# config t
+
+#$ ip dhcp pool vlan10 // inter into the vlan to configure
+#$ network [(192.168.10.0) (255.255.255.0)] // provide network address to vlan10
+#$ default-router [192.168.10.1] // provide getway address for the vlan10
+#$ dns-server 8.8.8.8 // provide domain name server [here google used]
+#$ exit // end of one vlan10 configuration
+
