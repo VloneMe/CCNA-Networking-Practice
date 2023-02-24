@@ -1,0 +1,24 @@
+// SVI - Switch Virtual Interface
+// Switch layer 3 VLAN configuration
+
+# config t
+
+// configuration in [MLS] vlan work as Interface
+
+#$ int vlan 10 // inter into the vlan Interface
+#$ ip address [192.168.10.1 255.255.255.0] // Assign ip address to each vlan.
+#$ exit // end of the vlan configuration
+#$ do show ip Interface brief  // to see the vlan interface configurations
+
+// Chech if the Switch layer 3 is enabled as layer 3 Switch
+
+> enable // switch to previllage mode.
+# show ip route // if no information in ICMP not enabled yet
+
+// Activate the layer 3 swutch functioning
+
+# config t
+
+#$ ip routing // This enables the Layer 3 switch functioning.
+
+
