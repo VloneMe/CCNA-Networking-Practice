@@ -1,0 +1,9 @@
+// Router DHCP server Configurations
+
+# config t
+
+#$ ip dhcp pool [VLAN10] // inter to dchp config with vlan 
+#$ network [192.168.10.0 255.255.255.0] // assign ntwork to the VLAN10
+#$ default-router 192.168.10.1 // assign getway to the VLAN10
+#$ dns-server [8.8.8.8] // provide domain name server [google used here]
+#$ exit // end of VLAN10 Configuration
