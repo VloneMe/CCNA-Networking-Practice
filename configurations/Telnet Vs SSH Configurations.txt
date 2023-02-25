@@ -1,0 +1,47 @@
+// Router telnet configurations
+
+# config t
+
+#$ line vty [(0-2) = 3] // assing number of users
+#$ password telnet cisco
+
+#$ login // user will be ask only passcode to login
+#$ login local // incase you want user to provide their name during login
+
+#$ transport input [telnet/all] // choose which between telnet / ssh
+#$ exit // end of telnet configuration
+
+// user telnet configuration with username and secret key.
+
+#$ username VloneNet secret cisco
+#$ line vty 0 2
+#$ login local
+
+// create user in a Router
+
+# conf t
+#$ username [username] secret [passcode]
+
+
+// Router SSH configurations
+// configure [Hostname] and [domain name] first
+// before generating ssh key
+
+# conf t
+
+#$ Hostname [core-Router] // input name of your Router
+#$ ip domain-name [vlone.net] // input your domain name
+
+#$ crypto key generate rsa // to generate SSH key for your router
+
+// bits asked to configure may use [1024] or of your own
+// then finish SSH configuration on Router
+
+#$ line vty 0 2
+#$ transport input ssh
+#$ exit // end of Router configuration
+
+// The term “vty” stands for Virtual teletype. VTY is a virtual port and used 
+// to get Telnet or SSH access to the device.
+
+

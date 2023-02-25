@@ -9,3 +9,13 @@
 #$ exit // end of VLAN10 Configuration
 
 
+// more commands
+
+#$ do show ip route // ip routing table
+
+#$ do show ip dhcp binding // show router configured ip address
+#$ do show ip dhcp conflict
+
+#$ do show ip dhcp import
+#$ do show ip dhcp pool
+#$ do show ip dhcp server statistics
