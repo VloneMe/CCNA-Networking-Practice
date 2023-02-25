@@ -1,0 +1,32 @@
+// VTP - Virtual Trunking Protocol
+// VTP has modes
+// ****** Client mode.
+// ****** Server mode.
+// ****** Transparent mode.
+
+
+// First thing first create 
+// Create multple switches [4] and Switchport mode Trunk 
+// To all switches connected togather
+
+// identify which works as either [Server, Client,] or [Transparent]
+
+// VTP configurations below
+// Vtp domain and passcode must be the same.
+// only Server are allowed to manage vlans
+
+# conf t 
+
+#$ vtp mode [Server, Transparent, Client] // choose vtp mode access
+#$ vtp domain [vlone] // insert domain of your own
+#$ vtp password cisco // vtp security
+#$ exit // end of one vtp configuration on one switch
+
+#$ no vlan [5] // for removing vlan
+
+
+// vtp Transparent switch is configure individual does not affect or been 
+// affect with the Server configuration
+
+// But Client mode vtp only acceot changes made by the server and cnt modfy any 
+// thing to it
