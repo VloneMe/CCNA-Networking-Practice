@@ -1,0 +1,31 @@
+// Port Security Configuration
+// server port security Configuration
+
+# config t 
+
+#$ int fa0/1 // access the interface
+#$ switchport mode access // get mode access
+#$ switchport port-security // allow port security
+
+#$ switchport port-security mac-address [mac-address]
+// Assign mac address for security
+//or
+#$ switchport port-security mac-address sticky 
+// allow switch to detect the mac-addres of the first connected device
+
+#$ switchport port-security maxmum [number] 
+// limit devices for the port
+
+#$ switchport port-security violation [protect, restrict, or shutdown] 
+// take  action when violation occur
+
+// Check port security
+#$ do show port-security int fa0/1
+
+// in case of any port violation of security in any port
+// When a cable is properly placed to a right device 
+// do the folling to turn up
+
+#$int fa0/1
+#$ shutdown
+#$ no shutdown
