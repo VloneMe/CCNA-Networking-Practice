@@ -1,0 +1,6 @@
+// Static Routing Configurations
+
+#conf t
+
+#$ ip [Network ID] [Subnet mask] [ip through]
+## do show ip route // to show ip route configurations

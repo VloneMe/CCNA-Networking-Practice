@@ -1,0 +1,31 @@
+// Etherchannel configuration 
+// When connecting multiple channel or interface between switch the other 
+// interfaceare blocked by The spaning protocol automaticall
+// But Etherchannel will allow multiple interface between switch to operate
+
+// Protocols for configuring Etherchannel
+//****** LACP >>> Link Aggregation Control Protocol
+//****** PAGP
+//****** L3
+
+
+# conf t
+
+#$ int rang 0/1-2
+#$ switchport mode trunk
+
+#$ channel-group 1 mode [active || passive] // for LACP protocol
+#$ channel-group 1 mode [auto || desireble] // for PAGP protocol
+#$ channel-group 1 mode [on] // enable Etherchannel omly
+
+// For LACP
+// Active <<++>> Active == UP
+// Active <<++>> Passive == UP
+// Passive <<++>> Passive == DOWN
+
+// For PAGP
+// Desireble <<++>> Desireble == UP
+// Auto <<++>> Desireble == UP
+// Auto <<++>> Auto == DOWN
+
+
