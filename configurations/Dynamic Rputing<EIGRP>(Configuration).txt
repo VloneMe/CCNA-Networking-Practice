@@ -1,0 +1,18 @@
+// DYNAMIC ROUTING <EIGRP> CONFIGURATIONS
+// This for CISCO made devices.
+
+// A router needs to advertise its network behind it 
+// for another router in the same network to access all its network as 
+// a neighbor network
+
+# conf t
+
+#$ router eigrp [provide your autnomous number [10]] 
+// must be same in all router
+
+#$ network [provide network [10.10.10.0]]
+// Provide the network behind the router to be accessed by other network 
+
+#$ do show ip route // confirm network ROUTING
+#$ do show ip eigrp neighbor // show neighbor network
+#$ end // done
