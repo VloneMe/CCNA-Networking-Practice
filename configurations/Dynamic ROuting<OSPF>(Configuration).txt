@@ -1,0 +1,17 @@
+// DYNAMIC ROUTING WITH <OSPF> Protocol
+
+# conf t
+
+#$ router ospf [autnomous number [1]]
+// in OSPF router autnomous not must be same
+
+#$ network [network id] [wild card bits] area [area id [0]]
+// wild card bits a reverse of the subnet mask 
+// also shoild provide a an area id to be used
+
+#$ exit // done
+
+#$ show ip route
+#$ do show run conf
+// to confirm your CONFIGURATIONS
+
