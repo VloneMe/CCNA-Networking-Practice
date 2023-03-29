@@ -1,0 +1,14 @@
+// Standard Access List CONFIGURATIONS
+// Router Configuration
+
+# conf t
+
+#$ access-list [ ? (1-99)] [deny/permit/remark] [network/any/host]
+
+#$ int fa0/0
+$$ ip access-group 1 [in/out] // option in or out
+#$ exit // Done
+
+// once one interface is assigned out the other assigns in auto
+
+
